@@ -12,9 +12,9 @@ public class Program2 {
 		Scanner sc = new Scanner(System.in);
 		DepartmentDao departmentDao = DaoFactory.createDepartmentDao();
 		
+		Department department = new Department(null, "Music");
 		/*
 		System.out.println("===== TEST 1: INSERT DEPARTMENT =====");
-		Department department = new Department(null, "Music");
 		departmentDao.insert(department);
 		System.out.println("Insert Completed");
 		 */
@@ -23,7 +23,10 @@ public class Program2 {
 		Department dep = departmentDao.findById(5);
 		System.out.println(dep);
 		
-		
+		System.out.println("===== TEST 3: UPDATE DEPARTMENT =====");
+		dep.setName("Toys");
+		departmentDao.update(dep);
+		System.out.println("Update Completed");
 		sc.close();
 
 	}
