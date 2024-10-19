@@ -104,7 +104,7 @@ public class SellerDaoJDBC implements SellerDao {
 				throw new SQLException("This seller doesn't exist!");
 			}
 		} catch (SQLException e) {
-			throw new DbException(e.getLocalizedMessage());
+			throw new DbException(e.getMessage());
 		} finally {
 			DB.CloseStatement(st);
 		}
